@@ -26,6 +26,11 @@ while (isSunk == false){
             alert("You missed!");
             misses = misses + 1;
          }
+        if (isSunk == true) {
+            prompt("Do you want to play again? (Type Yes or No)")
+            Option(No)
+
+        }
 }
 
     var stats = "You took " + guesses + " guesses to sink the battleship, " +
