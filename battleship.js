@@ -1,16 +1,16 @@
 var location = Math.floor(Math.random() * 7);
 var guess;
 var hits = 0;
-var miss = 0;
+var misses = 0;
 var guesses = 0;
 var isSunk = null;
-var answer1 = "Yes" || "yes";
-var answer2 = "No" || "no";
+var answer1 = "Yes";
+var answer2 = "No";
 
 while (isSunk == null){
     guess = prompt("Ready, aim, fire! (enter a number from 0-6):")
 
-    if (guess < 0 || guess > 6 || guess == null) {
+    if (guess < 0 || guess > 6) {
         alert("Please enter a valid cell number!");
     } else {
         guesses = guesses + 1; 
@@ -25,24 +25,21 @@ while (isSunk == null){
                 }
     }   else {
             alert("MISS");
-            miss = miss + 1;
-            if (miss == 3) {
+            misses = misses + 1;
+            if (misses == 3) {
+                alert("Your battleship sunk!")
                 isSunk = false;
-                alert("Got you!");
-                while (isSunk == false) {
-                    prompt("I got you! HAHHAHAA! Play again? (Enter Yes or No):")
-                    if (answer1) {
-                        isSunk = null;
-                        guesses = 0;
-                        hits = 0;
-                        miss = 0;
-                        if (answer2) {
-                            alert("You are now finished playing battleship!")
-                        }
-                    }
-                }
+            }
+    while (isSunk == false) {
+        prompt("Play again? (Enter Yes or No):");
+        if (answer1) {
+            isSunk = null;
+        }
+        if (answer2) {
+            alert("You have finished playing Battleship!")
         }
     }
+         }
 }
 
     var stats = "You took " + guesses + " guesses to sink the battleship, " +
