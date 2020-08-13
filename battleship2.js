@@ -17,7 +17,7 @@ while (isSunk == false) {
         guesses = guesses + 1;
     }
 
-    if (guess == location1) {
+    if (guess == 3) {
         alert("HIT!");
         hits = hits + 1;
         if (hits == 3) {
